@@ -1,7 +1,7 @@
 'use strict';
 
-function Pos(scanner, cart, discounter) {
-	this.cart = cart;
+function Pos(scanner, basket, discounter) {
+	this.basket = basket;
 	this.scanner = scanner;
 	this.discounter = discounter;
 }
@@ -9,20 +9,20 @@ function Pos(scanner, cart, discounter) {
 Pos.prototype.scan = function(tags) {
 	var o_this = this;
 	tags.forEach(function (tag) {
-		var newCartBook = o_this.scanner.scan(tag);
-		o_this.cart.addCartBook(newCartBook);
+		var newBasketBook = o_this.scanner.scan(tag);
+		o_this.basket.addBasketBook(newBasketBook);
 	});
 };
 
 Pos.prototype.printReceip = function() {
 	var bookCounts = [];
-	this.cart.cartBooks.forEach(function(cartBook){
-		bookCounts.push(cartBook.count);
+	this.basket.basketBooks.forEach(function(basketBook){
+		bookCounts.push(basketBook.count);
 	});
 
 	var beforDiscountPay =  0;
-	this.cart.cartBooks.forEach(function(cartBook){
-		beforDiscountPay += cartBook.book.price * cartBook.count;
+	this.basket.basketBooks.forEach(function(basketBook){
+		beforDiscountPay += basketBook.book.price * basketBook.count;
 	});
 
 	var saveMoney = this.discounter.getBigestSave(bookCounts) / 100;
@@ -30,10 +30,10 @@ Pos.prototype.printReceip = function() {
 	var receip = '------小龙书店------\n' +
 			         '------购书清单------\n';
 
-	this.cart.cartBooks.forEach(function(cartBook) {
-		receip += '书名：' + cartBook.book.name +
-		        	'，数量：' + cartBook.count +
-		        	'本，单价：' + cartBook.book.price + '元\n';
+	this.basket.basketBooks.forEach(function(basketBook) {
+		receip += '书名：' + basketBook.book.name +
+		        	'，数量：' + basketBook.count +
+		        	'本，单价：' + basketBook.book.price + '元\n';
 	});
 
 	receip += '--------结算--------\n' +

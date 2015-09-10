@@ -7,7 +7,7 @@ function Book(bookid, name, price) {
 }
 
 Book.find = function(bookid) {
-	var Util = require('./util.js');
+	var Util = require('./../helper/util.js');
 	var allBooks = Util.loadAllBooks();
 
 	var book;

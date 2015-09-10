@@ -1,5 +1,5 @@
 'use strict';
-var CartBook = require('./cart-book.js');
+var BasketBook = require('./basket-book.js');
 var Book = require('./book.js');
 
 function Scanner () {
@@ -8,8 +8,8 @@ function Scanner () {
 
 Scanner.prototype.scan = function(bookid) {
 	var book = Book.find(bookid);
-	var cartBook = new CartBook(book);
-	return cartBook;
+	var basketBook = new BasketBook(book);
+	return basketBook;
 };
 
 module.exports = Scanner;

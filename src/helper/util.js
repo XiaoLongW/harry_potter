@@ -1,5 +1,5 @@
 'use strict';
-var Book = require('./book.js');
+var Book = require('./../module/book.js');
 
 function Utils() {
 
