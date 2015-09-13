@@ -16,6 +16,7 @@ Book.find = function(bookid) {
 			book = oneBook;
 		}
 	});
+
 	return book;
 };
 
