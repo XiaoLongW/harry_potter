@@ -4,15 +4,20 @@ function Discounter () {
 	this.rate = [25, 20, 10, 5, 0];
 }
 
-Discounter.prototype.getBigestSave = function(bookCounts) {
+Discounter.prototype.discount = function(bookCounts,totalMoney) {
+	var saveMoney = this.getBigestSave(bookCounts) / 100;
+	var afterDiscounterPay = totalMoney - saveMoney;
+	return afterDiscounterPay;
+};
 
+Discounter.prototype.getBigestSave = function(bookCounts) {
 	var bookCountsBackup = [];
 	var saveMoney = [];
 	for(i=0; i<5; i++) {
 		saveMoney[i] = 0;
 	}
 
-	if(!bookCounts[0] && !bookCounts[0] && !bookCounts[0] && !bookCounts[0] && !bookCounts[0]) {
+	if(!bookCounts[0] && !bookCounts[1] && !bookCounts[2] && !bookCounts[3] && !bookCounts[4]) {
 		return 0;
 	}
 
