@@ -15,17 +15,11 @@ Pos.prototype.scan = function(tags) {
 };
 
 Pos.prototype.printReceip = function() {
-	var bookCounts = [];
-	this.basket.basketBooks.forEach(function(basketBook){
-		bookCounts.push(basketBook.count);
-	});
+	var bookCounts = this.basket.getCounts();
 
-	var beforDiscountPay =  0;
-	this.basket.basketBooks.forEach(function(basketBook){
-		beforDiscountPay += basketBook.book.price * basketBook.count;
-	});
+	var beforDiscountPay =  this.basket.getTotalPay();
 
-	var saveMoney = this.discounter.getBigestSave(bookCounts) / 100;
+	var afterDiscounterPay = this.discounter.discount(bookCounts, beforDiscountPay);
 
 	var receip = '------小龙书店------\n' +
 			         '------购书清单------\n';
@@ -38,7 +32,7 @@ Pos.prototype.printReceip = function() {
 
 	receip += '--------结算--------\n' +
 			      '原价:'+beforDiscountPay+'元\n' +
-			      '实际支付(打折后):'+(beforDiscountPay-saveMoney) + '元	\n';
+			      '实际支付(打折后):'+afterDiscounterPay + '元	\n';
 
 	return receip;
 };
