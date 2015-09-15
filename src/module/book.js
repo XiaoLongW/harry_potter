@@ -7,7 +7,7 @@ function Book(bookid, name, price) {
 }
 
 Book.find = function(bookid) {
-	var Util = require('./../helper/util.js');
+	var Util = require('./../helper/util.js');//这个Util为什么不在文件的开始引入？
 	var allBooks = Util.loadAllBooks();
 
 	var book;

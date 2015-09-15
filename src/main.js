@@ -11,8 +11,8 @@ function main(tags) {
 	var pos = new Pos(scanner, basket, discounter);
 
 	pos.scan(tags);
-	var receipt = pos.printReceip();
-  console.log(receipt)
+	var receipt = pos.printReceip();//这里还是太拘泥于pos机的模式了，这个题目里并没有那些东西。反而给自己加大了难度
+  console.log(receipt)//缩进
 }
 
 module.exports = main;
