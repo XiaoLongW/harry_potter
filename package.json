@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "jasmine spec/discounter_spec.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jasmine": "^2.3.2"
+    "jasmine": "^2.3.2",
+    "lodash": "^3.10.1",
+    "underscore": "^1.8.3"
   }
 }
