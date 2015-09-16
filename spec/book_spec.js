@@ -1,5 +1,5 @@
 'use strict';
-var Book = require("../src/module/book.js");
+var Book = require("../src/model/book.js");
 
 describe("Book", function(){
 

@@ -1,7 +1,7 @@
 'use strict';
-var Basket = require("../src/module/basket.js");
-var Book = require("../src/module/book.js");
-var BasketBook = require("../src/module/basket-book.js");
+var Basket = require("../src/model/basket.js");
+var Book = require("../src/model/book.js");
+var BasketBook = require("../src/model/basket-book.js");
 
 describe("Basket", function(){
 
