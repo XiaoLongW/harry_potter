@@ -1,4 +1,6 @@
 # harry_potter
+实现思路:
+  将顾客购买物品的清单进行扫描录入,得到记录每种书的数量的数组,用递归的方法找到最大节省的钱数,用总价减去最大节省的 得到打折后的钱数
 To try and encourage more sales of the 5 different Harry Potter books they sell, a bookshop has decided to offer discounts of multiple-book purchases.
 
 One copy of any of the five books costs 8 EUR.
