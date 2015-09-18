@@ -7,9 +7,9 @@ function Scanner () {
 }
 
 Scanner.prototype.scan = function(bookid) {
-	var book = Book.find(bookid);
-	var basketBook = new BasketBook(book);
-	return basketBook;
+  var book = Book.find(bookid);
+  var basketBook = new BasketBook(book);
+  return basketBook;
 };
 
 module.exports = Scanner;
